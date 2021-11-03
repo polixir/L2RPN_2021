@@ -95,7 +95,7 @@ class unitary_action_network(nn.Module):
 
         return predicts.detach().cpu().numpy()
 
-class Track1PowerNetAgent(BaseAgent):
+class PowerNetAgent(BaseAgent):
     def __init__(self, env, submission_path):
         BaseAgent.__init__(self, action_space=env.action_space)
         # global action
@@ -753,5 +753,5 @@ class Track1PowerNetAgent(BaseAgent):
 
 def make_agent(env, submission_path):
     # my_agent = MyAgent(env.action_space,  env.alarms_lines_area, env.alarms_area_names, submission_path)
-    my_agent = Track1PowerNetAgent(env, submission_path)
+    my_agent = PowerNetAgent(env, submission_path)
     return my_agent
